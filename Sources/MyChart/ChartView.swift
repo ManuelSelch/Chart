@@ -15,16 +15,9 @@ public struct ChartItem {
 
 public struct ChartView: View {
     let items: [ChartItem]
-    let formatter: DateComponentsFormatter
-    
-    var itemClicked: (_ id: Int) -> ()
     
     public init(_ items: [ChartItem], _ itemClicked: @escaping (_ id: Int ) -> ()){
         self.items = items
-        self.itemClicked = itemClicked
-        
-        formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute]
     }
     
     var itemsOrdered:  [ChartItem] {
@@ -44,20 +37,6 @@ public struct ChartView: View {
             }
             .padding()
             .frame(height: 200)
-   
-            List(itemsOrdered, id: \.id){ item in
-                let valueStr = formatter.string(from: item.value) ?? "--"
-                Button(action: {
-                    itemClicked(item.id)
-                }){
-                    HStack {
-                        Text(item.name)
-                        Spacer()
-                        Text(valueStr)
-                    }
-                }
-            }
-             
         }
     }
 }
