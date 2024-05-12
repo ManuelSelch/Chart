@@ -16,7 +16,7 @@ public struct ChartItem {
 public struct ChartView: View {
     let items: [ChartItem]
     
-    public init(_ items: [ChartItem], _ itemClicked: @escaping (_ id: Int ) -> ()){
+    public init(_ items: [ChartItem]){
         self.items = items
     }
     
