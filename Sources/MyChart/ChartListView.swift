@@ -22,7 +22,7 @@ public struct ChartListView: View {
     
     
     public var body: some View {
-        List(itemsOrdered, id: \.id){ item in
+        List(itemsOrdered){ item in
             let valueStr = formatter.string(from: item.value) ?? "--"
             Button(action: {
                 itemClicked(item.id)

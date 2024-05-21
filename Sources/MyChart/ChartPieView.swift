@@ -1,19 +1,7 @@
 import SwiftUI
 import Charts
 
-public struct ChartItem {
-    public var id: Int
-    public var name: String
-    public var value: Double
-    
-    public init(id: Int, name: String, value: Double) {
-        self.id = id
-        self.name = name
-        self.value = value
-    }
-}
-
-public struct ChartView: View {
+public struct ChartPieView: View {
     let items: [ChartItem]
     
     public init(_ items: [ChartItem]){
